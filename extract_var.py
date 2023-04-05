@@ -10,7 +10,7 @@ def load_aln(aln_db, in_aln):
             if line[0] == '>':
                 if seq != "":
                     aln_db[id] = seq
-                id = line.strip().split()[0][1:]
+                id = line.strip().split()[0][1:].replace('_R_', '')
                 seq = ""
             else:
                 seq += line.strip().upper()
