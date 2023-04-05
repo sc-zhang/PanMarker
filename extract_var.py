@@ -74,7 +74,8 @@ def classify_info(classified_info, full_info):
                                 last_info[2][1] += cur_info[1]
                             if cur_info[2] != '-':
                                 last_info[2][2] += cur_info[2]
-    classified_info.append([last_info[2][0], last_info[0], last_info[2][1], last_info[2][2], last_info[2][3]])
+    if last_info:
+        classified_info.append([last_info[2][0], last_info[0], last_info[2][1], last_info[2][2], last_info[2][3]])
 
 
 def extract_var(in_aln, out_stat):
