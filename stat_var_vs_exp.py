@@ -38,6 +38,8 @@ def stat_var_vs_exp(in_var, in_exp, out_stat):
                         elif data[i] == '1':
                             alt_list.append(exp_db[idx_db[i]])
 
+                    if len(ref_list) == 1 or len(alt_list) == 1:
+                        continue
                     # remove outliers with grubbs test
                     ref_list = grubbs.test(np.array(ref_list), alpha=0.05)
                     alt_list = grubbs.test(np.array(alt_list), alpha=0.05)
